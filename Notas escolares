@@ -1,0 +1,204 @@
+#include <iostream>
+#include <conio.h>
+#include <stdlib.h>
+
+using namespace std;
+
+int main() 
+{
+
+   	int a,b,op;
+   do
+   {	
+   		cout<<endl<<endl;   	
+	   	cout<<"                     Bienvenido a la Gestion de notas"<<endl;
+	   	cout<<"-------------------------------------------------------------------------------";
+	   	cout<<endl<<endl;
+	   	cout<<"Selecciona una opcion: "<<endl<<endl;
+	   	cout<<"1. Salir"<<endl;
+	   	cout<<"2. Clases Disponibles"<<endl;
+	   	cout<<"3. Ingresar Notas"<<endl<<endl;  
+		cout<<"---> ";	
+	   	cin>>a;
+	   	cout<<endl<<endl;
+	   	
+	   	switch(a)
+	   		{
+	   			case 1:
+	   			{
+		   			cout<<"Seguro que quieres salir? SI/NO "<<endl;
+		   			cout<<"1. Si"<<endl;
+		   			cout<<"2. No"<<endl;
+		   			cin>>b;
+		   			cout<<endl<<endl;
+		   			if (b==1)
+		   			{
+		   				return 0;
+					}
+					else
+					{
+						return main();
+					}
+				}
+				default:
+				return main();
+	   			break;
+	   			
+	   			case 2:
+	   			{	
+		   			cout<<"Codigo-Clase"<<"              Nombre de la clase           "<<"          Horarios Disponibles        "<<endl;
+		   			cout<<"----------------------------------------------------------------------------------------------------------------"<<endl;
+		   			cout<<"   MAT001 	 "<<"    		 Matematicas   			  "<<" Lun-Jue 15:00-16:00"<<endl;
+		   			cout<<"   QUM110 	 "<<"    		 Quimica       			  "<<" Mar-Mie 11:00-13:00"<<endl;
+		   			cout<<"   ESP115 	 "<<"    		 Espaniol      			  "<<" Lun-Vie 18:00-19:00"<<endl;
+		   			cout<<endl<<endl;
+		   			system("pause");
+		   		}
+		   			break;
+		   		
+				case 3:
+				{
+  					int nt=0;
+   					int cant=0;	
+   					int i=1;
+   					string nombre;
+   					int op=0;
+   					string asignatura;
+					double NotaEstudiante, SumaNotas; 				
+				   cout << "Cuantas notas de acumulado se calificaran?:  ";
+				   cin >>nt;
+				   if(nt<4)
+				   {
+				   	 cout<<"Aviso! Se necesitan al menos 4 notas de acumulado para presentar la nota final"<<endl;
+				   	 cout<<"Desea continuar? 1. Si - 2.No: ";
+				   	 cin>>op;
+				   	 cout<<endl<<endl<<endl;
+				   	 	if (op==1)
+				   	 	{
+				   	 		cout<<"Ingrese el nombre del alumno: ";
+						   cin>>nombre;
+						   cout<<endl;
+						   	cout<<"Ingrese el codigo de la clase: ";
+				   			cin>>asignatura;
+						   cout<<endl<<endl;
+						   while (cant=nt)
+						   {	
+						   		if (i==nt+1)
+						   		{
+						   			break;
+								}
+								else
+								{
+									cout << "Registre calificacion "<<i<<": ";
+								   	cin >> NotaEstudiante;						   	
+								
+								   SumaNotas=SumaNotas+NotaEstudiante;
+										   
+								}
+						   		i++;  
+							}
+							cout<<endl<<endl<<endl;
+							if (SumaNotas<=100)
+							{
+								cout<<"Alumno(a): "<<nombre<<endl;
+								if (asignatura=="MAT001")
+								{
+									cout<<"Asignatura calificada: "<<asignatura<<" Matematicas";
+								cout<<endl;									
+								}
+								else
+								{
+									if(asignatura=="QUM110")
+									{
+									cout<<"Asignatura calificada: "<<asignatura<<" Quimica";	
+									cout<<endl;
+									}
+									else
+									{
+										
+										cout<<"Asignatura calificada: "<<asignatura<<" Espaniol";
+									}
+								}
+
+								cout<<"Total acumulado: "<<SumaNotas;
+							}
+							else
+							{
+								cout<<"Error en ingreso de acumulados. No puede ser mayor a 100%";
+							}
+						}
+				   }
+				   else
+				   {
+					  	   cout<<"Ingrese el nombre del alumno: ";
+						   cin>>nombre;
+						   cout<<endl;
+						   	cout<<"Ingrese el codigo de la clase: ";
+				   			cin>>asignatura;
+						   cout<<endl<<endl;
+						   while (cant=nt)
+						   {	
+						   		if (i==nt+1)
+						   		{
+						   			break;
+								}
+								else
+								{
+									cout << "Registre calificacion "<<i<<": ";
+								   	cin >> NotaEstudiante;						   	
+								
+								   SumaNotas=SumaNotas+NotaEstudiante;
+										   
+								}
+						   		i++;  
+							}
+							cout<<endl<<endl<<endl;
+							if (SumaNotas<=100)
+							{
+								cout<<"Alumno(a): "<<nombre<<endl;
+								if (asignatura=="MAT001")
+								{
+								cout<<"Asignatura calificada: "<<asignatura<< " Matematicas";
+								cout<<endl;									
+								}
+								else
+								{
+									if(asignatura=="QUM110")
+									{
+									cout<<"Asignatura calificada: "<<asignatura<<" Quimica";	
+									cout<<endl;
+									}
+									else
+									{
+										cout<<"Asignatura calificada: "<<asignatura<<" Espaniol";
+									}
+								}
+
+								cout<<"Total acumulado: "<<SumaNotas;
+							}
+							else
+							{
+								cout<<"Error en ingreso de acumulados. No puede ser mayor a 100%";
+							}
+				   }
+				   
+					cout<<endl<<endl<<endl;
+					
+					
+				}//case 3   	
+	   			
+			}//switch
+			
+		cout<<endl<<endl<<endl<<endl<<endl<<endl;		
+	} //do
+	while(a!=1);
+	system("pause");
+	return main();
+}
+	
+   
+
+   	
+   		
+
+     
